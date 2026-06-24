@@ -1,0 +1,20 @@
+site_icon = "🎃"
+site_name = "魔法窝瓜"
+author = "Magic Squash"
+footer = "由 mdBear 强力驱动 💪"
+output_dir = "mdbear"
+
+[[nav]]
+name = "首页"
+path = "index.md"
+type = "page"
+
+[[nav]]
+name = "博客"
+path = "blog.html"
+type = "page"
+
+[[nav]]
+name = "关于"
+path = "about.md"
+type = "page"
