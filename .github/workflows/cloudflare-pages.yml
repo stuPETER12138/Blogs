@@ -14,27 +14,15 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Install Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: ">=3.10"
+      - name: Install mdbear
+        run: cargo install mdbear
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-
-      - uses: typst-community/setup-typst@v4
-
-      - name: Build site with Python
-        run: uv run build.py build
-
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v4
-        with:
-          path: _site
+      - name: Build site with mdbear
+        run: mdbear build
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy _site --project-name=jiong
+          command: pages deploy mdbear --project-name=jiong
