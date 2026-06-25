@@ -1,5 +1,6 @@
 site_icon = "🎃"
 site_name = "魔法窝瓜"
+language = "zh"
 author = "Magic Squash"
 footer = "由 mdBear 强力驱动 💪"
 output_dir = "mdbear"
